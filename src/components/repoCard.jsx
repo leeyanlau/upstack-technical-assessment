@@ -1,129 +1,15 @@
 import React from "react";
 
-const repo1 = {
-  id: 10270491,
-  node_id: "MDEwOlJlcG9zaXRvcnkxMDI3MDQ5MQ==",
-  name: "react-bower",
-  full_name: "reactjs/react-bower",
-  private: false,
-  owner: {
-    login: "reactjs",
-    id: 6412038,
-    node_id: "MDEyOk9yZ2FuaXphdGlvbjY0MTIwMzg=",
-    avatar_url: "https://avatars.githubusercontent.com/u/6412038?v=4",
-    gravatar_id: "",
-    url: "https://api.github.com/users/reactjs",
-    html_url: "https://github.com/reactjs",
-    followers_url: "https://api.github.com/users/reactjs/followers",
-    following_url: "https://api.github.com/users/reactjs/following{/other_user}",
-    gists_url: "https://api.github.com/users/reactjs/gists{/gist_id}",
-    starred_url: "https://api.github.com/users/reactjs/starred{/owner}{/repo}",
-    subscriptions_url: "https://api.github.com/users/reactjs/subscriptions",
-    organizations_url: "https://api.github.com/users/reactjs/orgs",
-    repos_url: "https://api.github.com/users/reactjs/repos",
-    events_url: "https://api.github.com/users/reactjs/events{/privacy}",
-    received_events_url: "https://api.github.com/users/reactjs/received_events",
-    type: "Organization",
-    site_admin: false,
-  },
-  html_url: "https://github.com/reactjs/react-bower",
-  description: "[DISCONTINUED] Bower package for React",
-  fork: false,
-  url: "https://api.github.com/repos/reactjs/react-bower",
-  forks_url: "https://api.github.com/repos/reactjs/react-bower/forks",
-  keys_url: "https://api.github.com/repos/reactjs/react-bower/keys{/key_id}",
-  collaborators_url: "https://api.github.com/repos/reactjs/react-bower/collaborators{/collaborator}",
-  teams_url: "https://api.github.com/repos/reactjs/react-bower/teams",
-  hooks_url: "https://api.github.com/repos/reactjs/react-bower/hooks",
-  issue_events_url: "https://api.github.com/repos/reactjs/react-bower/issues/events{/number}",
-  events_url: "https://api.github.com/repos/reactjs/react-bower/events",
-  assignees_url: "https://api.github.com/repos/reactjs/react-bower/assignees{/user}",
-  branches_url: "https://api.github.com/repos/reactjs/react-bower/branches{/branch}",
-  tags_url: "https://api.github.com/repos/reactjs/react-bower/tags",
-  blobs_url: "https://api.github.com/repos/reactjs/react-bower/git/blobs{/sha}",
-  git_tags_url: "https://api.github.com/repos/reactjs/react-bower/git/tags{/sha}",
-  git_refs_url: "https://api.github.com/repos/reactjs/react-bower/git/refs{/sha}",
-  trees_url: "https://api.github.com/repos/reactjs/react-bower/git/trees{/sha}",
-  statuses_url: "https://api.github.com/repos/reactjs/react-bower/statuses/{sha}",
-  languages_url: "https://api.github.com/repos/reactjs/react-bower/languages",
-  stargazers_url: "https://api.github.com/repos/reactjs/react-bower/stargazers",
-  contributors_url: "https://api.github.com/repos/reactjs/react-bower/contributors",
-  subscribers_url: "https://api.github.com/repos/reactjs/react-bower/subscribers",
-  subscription_url: "https://api.github.com/repos/reactjs/react-bower/subscription",
-  commits_url: "https://api.github.com/repos/reactjs/react-bower/commits{/sha}",
-  git_commits_url: "https://api.github.com/repos/reactjs/react-bower/git/commits{/sha}",
-  comments_url: "https://api.github.com/repos/reactjs/react-bower/comments{/number}",
-  issue_comment_url: "https://api.github.com/repos/reactjs/react-bower/issues/comments{/number}",
-  contents_url: "https://api.github.com/repos/reactjs/react-bower/contents/{+path}",
-  compare_url: "https://api.github.com/repos/reactjs/react-bower/compare/{base}...{head}",
-  merges_url: "https://api.github.com/repos/reactjs/react-bower/merges",
-  archive_url: "https://api.github.com/repos/reactjs/react-bower/{archive_format}{/ref}",
-  downloads_url: "https://api.github.com/repos/reactjs/react-bower/downloads",
-  issues_url: "https://api.github.com/repos/reactjs/react-bower/issues{/number}",
-  pulls_url: "https://api.github.com/repos/reactjs/react-bower/pulls{/number}",
-  milestones_url: "https://api.github.com/repos/reactjs/react-bower/milestones{/number}",
-  notifications_url: "https://api.github.com/repos/reactjs/react-bower/notifications{?since,all,participating}",
-  labels_url: "https://api.github.com/repos/reactjs/react-bower/labels{/name}",
-  releases_url: "https://api.github.com/repos/reactjs/react-bower/releases{/id}",
-  deployments_url: "https://api.github.com/repos/reactjs/react-bower/deployments",
-  created_at: "2013-05-24T16:29:15Z",
-  updated_at: "2023-01-28T21:31:52Z",
-  pushed_at: "2017-11-09T15:26:05Z",
-  git_url: "git://github.com/reactjs/react-bower.git",
-  ssh_url: "git@github.com:reactjs/react-bower.git",
-  clone_url: "https://github.com/reactjs/react-bower.git",
-  svn_url: "https://github.com/reactjs/react-bower",
-  homepage: "",
-  size: 6927,
-  stargazers_count: 70,
-  watchers_count: 70,
-  language: "JavaScript",
-  has_issues: false,
-  has_projects: true,
-  has_downloads: true,
-  has_wiki: true,
-  has_pages: false,
-  has_discussions: false,
-  forks_count: 46,
-  mirror_url: null,
-  archived: true,
-  disabled: false,
-  open_issues_count: 0,
-  license: {
-    key: "mit",
-    name: "MIT License",
-    spdx_id: "MIT",
-    url: "https://api.github.com/licenses/mit",
-    node_id: "MDc6TGljZW5zZTEz",
-  },
-  allow_forking: true,
-  is_template: false,
-  web_commit_signoff_required: false,
-  topics: [],
-  visibility: "public",
-  forks: 46,
-  open_issues: 0,
-  watchers: 70,
-  default_branch: "master",
-  permissions: {
-    admin: false,
-    maintain: false,
-    push: false,
-    triage: false,
-    pull: true,
-  },
-};
-
-const RepoCard = () => {
+const RepoCard = ({ repo }) => {
   return (
     <div className="card">
-      <div className="card_title">Title: {repo1.name}</div>
-      <div className="card_desc">Description: {repo1.description}</div>
+      <div className="card_title">Title: {repo.name}</div>
+      <div className="card_desc">Description: {repo.description}</div>
       <div className="card_details">
-        <div className="card_details_stars">Stars: {repo1.stargazers_count}</div>
-        <div className="card_details_forks">Forks: {repo1.forks_count}</div>
-        <div className="card_details_watchers">Watchers: {repo1.watchers}</div>
-        <div className="card_details_language">Language: {repo1.language}</div>
+        <div className="card_details_stars">Stars: {repo.stargazers_count}</div>
+        <div className="card_details_forks">Forks: {repo.forks_count}</div>
+        <div className="card_details_watchers">Watchers: {repo.watchers}</div>
+        <div className="card_details_language">Language: {repo.language}</div>
       </div>
     </div>
   );
