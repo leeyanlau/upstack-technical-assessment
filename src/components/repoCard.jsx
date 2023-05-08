@@ -1,7 +1,7 @@
 import React from "react";
 
-const repoCard = () => {
-  return <div>repoCard</div>;
+const RepoCard = () => {
+  return <div>RepoCard</div>;
 };
 
-export default repoCard;
+export default RepoCard;
