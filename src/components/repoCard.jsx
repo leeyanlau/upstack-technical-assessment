@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const RepoCard = ({ repo }) => {
-  const repos = useSelector((state) => state.allRepos.repos);
+  const repos = useSelector((state) => state.repos.repos);
   const { name, description, stargazers_count, forks_count, watchers, language } = repos[0];
   return (
     <div className="card">

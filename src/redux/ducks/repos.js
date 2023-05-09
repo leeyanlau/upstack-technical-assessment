@@ -1,5 +1,14 @@
-import { ActionTypes } from "./../constants/actionTypes";
+const SET_REPOS = "SET_REPOS"; //action type
 
+//action
+export const setRepos = (repos) => {
+  return {
+    type: SET_REPOS,
+    payload: repos,
+  };
+};
+
+//state variable
 const initState = {
   repos: [
     {
@@ -118,11 +127,14 @@ const initState = {
   ],
 };
 
-export const repoReducer = (state = initState, { type, payload }) => {
-  switch (type) {
-    case ActionTypes.SET_REPOS:
+//reducer switch case
+const store = (state = initState, action) => {
+  switch (action.type) {
+    case SET_REPOS:
       return state;
     default:
       return state;
   }
 };
+
+export default store;
