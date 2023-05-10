@@ -14,8 +14,8 @@ const SearchBar = () => {
 
   return (
     <div>
-      <input placeholder="Search for repositories..." value={searchTerm} onChange={handleSearchChange} />
       <MdSearch />
+      <input placeholder="Search for repositories..." value={searchTerm} onChange={handleSearchChange} />
     </div>
   );
 };

@@ -19,8 +19,10 @@ const RepoCard = () => {
       {reposData.map((val, key) => {
         return (
           <div className="card" key={key}>
-            <div className="card_title">Title: {val.name}</div>
-            <div className="card_desc">Description: {val.description}</div>
+            <div className="card_overview">
+              <div className="card_title">Title: {val.name}</div>
+              <div className="card_desc">Description: {val.description}</div>
+            </div>
             <div className="card_details">
               <div className="card_details_stars">Stars: {val.stargazers_count}</div>
               <div className="card_details_forks">Forks: {val.forks_count}</div>
