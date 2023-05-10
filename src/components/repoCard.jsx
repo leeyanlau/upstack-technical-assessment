@@ -5,7 +5,7 @@ import { getReposFetch } from "../redux/state/reposState";
 import "../styles/RepoCard/RepoCard.css";
 
 const RepoCard = () => {
-  const repos = useSelector((state) => state.reposReducer.repos);
+  const { repos } = useSelector((state) => state.reposReducer);
   const dispatch = useDispatch();
 
   useEffect(() => {

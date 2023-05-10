@@ -4,6 +4,7 @@ export const reposSlice = createSlice({
   name: "repos",
   initialState: {
     repos: [],
+    searchTerm: "",
     isLoading: false,
   },
   reducers: {
@@ -17,9 +18,12 @@ export const reposSlice = createSlice({
     getReposFailure: (state) => {
       state.isLoading = false;
     },
+    setSearchTerm: (state, action) => {
+      state.searchTerm = action.payload;
+    },
   },
 });
 
-export const { getReposFetch, getReposSuccess, getReposFailure } = reposSlice.actions;
+export const { getReposFetch, getReposSuccess, getReposFailure, setSearchTerm } = reposSlice.actions;
 
 export default reposSlice.reducer;

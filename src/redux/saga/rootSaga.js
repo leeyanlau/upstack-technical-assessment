@@ -3,7 +3,7 @@ import { call, put, takeEvery } from "redux-saga/effects";
 import { getReposSuccess } from "../state/reposState";
 
 function fetchRepos() {
-  return axios.request({
+  return axios({
     method: "get",
     url: "https://api.github.com/orgs/reactjs/repos",
   });
