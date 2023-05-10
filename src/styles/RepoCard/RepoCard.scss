@@ -1,3 +1,8 @@
+.card_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .card {
   width: 310px;
   height: 460px;
