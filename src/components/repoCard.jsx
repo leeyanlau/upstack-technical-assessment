@@ -5,18 +5,18 @@ import { getReposFetch } from "../redux/state/reposState";
 import "../styles/RepoCard/RepoCard.css";
 
 const RepoCard = () => {
-  const { repos } = useSelector((state) => state.reposReducer);
+  const { repos, searchTerm } = useSelector((state) => state.reposReducer);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getReposFetch());
   }, [dispatch]);
 
-  console.log(repos);
+  const reposData = repos.filter((repo) => repo.name.toLowerCase().includes(searchTerm));
 
   return (
     <div className="card_container">
-      {repos.map((val, key) => {
+      {reposData.map((val, key) => {
         return (
           <div className="card" key={key}>
             <div className="card_title">Title: {val.name}</div>

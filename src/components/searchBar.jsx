@@ -9,7 +9,7 @@ const SearchBar = () => {
   const dispatch = useDispatch();
 
   const handleSearchChange = (e) => {
-    dispatch(setSearchTerm(e.target.value));
+    dispatch(setSearchTerm(e.target.value.toLowerCase()));
   };
 
   return (
