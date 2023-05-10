@@ -1,29 +1,35 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getRepos } from "../redux/ducks/repos";
+import { getReposFetch } from "../redux/state/reposState";
 
-const RepoCard = ({ repo }) => {
+import "../styles/RepoCard/RepoCard.css";
+
+const RepoCard = () => {
+  const repos = useSelector((state) => state.reposReducer.repos);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getRepos());
+    dispatch(getReposFetch());
   }, [dispatch]);
 
-  const repos = useSelector((state) => state.repos.repos);
+  console.log(repos);
 
-  console.log({ repos });
-  const { name, description, stargazers_count, forks_count, watchers, language } = repos[2];
   return (
     <div className="card">
-      CARD
-      <div className="card_title">Title: {name}</div>
-      <div className="card_desc">Description: {description}</div>
-      <div className="card_details">
-        <div className="card_details_stars">Stars: {stargazers_count}</div>
-        <div className="card_details_forks">Forks: {forks_count}</div>
-        <div className="card_details_watchers">Watchers: {watchers}</div>
-        <div className="card_details_language">Language: {language}</div>
-      </div>
+      {repos.map((val, key) => {
+        return (
+          <>
+            <div className="card_title">Title: {val.name}</div>
+            <div className="card_desc">Description: {val.description}</div>
+            <div className="card_details">
+              <div className="card_details_stars">Stars: {val.stargazers_count}</div>
+              <div className="card_details_forks">Forks: {val.forks_count}</div>
+              <div className="card_details_watchers">Watchers: {val.watchers}</div>
+              <div className="card_details_language">Language: {val.language}</div>
+            </div>
+          </>
+        );
+      })}
     </div>
   );
 };
