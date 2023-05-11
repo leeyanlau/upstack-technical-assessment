@@ -1,28 +1,60 @@
+@import "../variables/variables.scss";
+
 .card_container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+
+  .card {
+    width: 80vw;
+    height: 6rem;
+    margin: 0.5rem;
+    padding: 1rem;
+
+    position: relative;
+    border-radius: $fillet;
+    overflow: hidden;
+    border: solid;
+    border-color: $primaryColor;
+    border-width: 2px;
+
+    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+
+    .card_overview,
+    .card_details {
+      padding-left: 1rem;
+    }
+
+    .card_title {
+      color: $primaryColor;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .card_desc {
+      color: $secondaryColor;
+      padding-top: 0.5rem;
+    }
+
+    .card_details {
+      display: none;
+    }
+  }
 }
-
-.card {
-  width: 310px;
-  height: 460px;
-  margin: 1.5rem;
-
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  border: solid;
-
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
-  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
-}
-
-.card_details {
-  display: none;
-}
-
 .card_container :hover {
+  background-color: $primaryColor;
+  border-color: $primaryColor;
+
+  .card_title {
+    color: white;
+  }
+
+  .card_desc {
+    color: white;
+  }
+
   .card_details {
-    display: block;
+    display: flex;
+    gap: 2rem;
   }
 }

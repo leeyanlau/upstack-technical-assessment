@@ -1,0 +1,15 @@
+@import "../variables/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.home_title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: $primaryColor;
+  font-size: 4rem;
+}

@@ -4,6 +4,8 @@ import { MdSearch } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchTerm } from "../redux/state/reposState";
 
+import "../styles/SearchBar/SearchBar.css";
+
 const SearchBar = () => {
   const { searchTerm } = useSelector((state) => state.reposReducer);
   const dispatch = useDispatch();
@@ -13,9 +15,9 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
-      <MdSearch />
-      <input placeholder="Search for repositories..." value={searchTerm} onChange={handleSearchChange} />
+    <div className="searchBar">
+      <MdSearch className="searchBar_icon" />
+      <input className="searchBar_input" placeholder="Search for repositories..." value={searchTerm} onChange={handleSearchChange} />
     </div>
   );
 };
