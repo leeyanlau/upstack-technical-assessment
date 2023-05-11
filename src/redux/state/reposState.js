@@ -15,7 +15,7 @@ export const reposSlice = createSlice({
       state.isLoading = true;
     },
     getReposSuccess: (state, action) => {
-      state.repos = action.payload;
+      state.repos = [...state.repos, ...action.payload];
       state.page += 1;
       state.hasMore = action.payload.length > 0;
       state.isLoading = false;
