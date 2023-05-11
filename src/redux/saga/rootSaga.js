@@ -1,21 +1,19 @@
 import axios from "axios";
-import { call, put, takeEvery } from "redux-saga/effects";
-import { getReposSuccess } from "../state/reposState";
-
-function fetchRepos() {
-  return axios({
-    method: "get",
-    url: "https://api.github.com/orgs/reactjs/repos",
-  });
-}
+import { call, put, takeLatest, select } from "redux-saga/effects";
+import { getReposFailure, getReposSuccess } from "../state/reposState";
 
 function* workGetReposFetch() {
-  const repos = yield call(fetchRepos);
-  yield put(getReposSuccess(repos.data));
+  try {
+    const page = yield select((state) => state.reposReducer.page);
+    const response = yield call(axios.get, `https://api.github.com/orgs/reactjs/repos?page=${page}&per_page=10`);
+    yield put(getReposSuccess(response.data));
+  } catch (error) {
+    yield put(getReposFailure(error));
+  }
 }
 
 function* reposSaga() {
-  yield takeEvery("repos/getReposFetch", workGetReposFetch);
+  yield takeLatest("repos/getReposFetch", workGetReposFetch);
 }
 
 export default reposSaga;
