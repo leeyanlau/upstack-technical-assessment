@@ -3,11 +3,11 @@ import { call, put, takeLatest, select } from "redux-saga/effects";
 import { getReposFailure, getReposSuccess } from "../state/reposState";
 
 const getData = async (page, searchTerm) => {
-  const newUrl = "https://api.github.com/search/repositories?q=org:reactjs+" + searchTerm + "&page=" + page + "&per_page=10";
+  const url = "https://api.github.com/search/repositories?q=org:reactjs+" + searchTerm + "&page=" + page + "&per_page=10";
   // const url = "https://api.github.com/orgs/reactjs/repos?page=" + page + "&per_page=10&sort=updated_at";
-  console.log(newUrl);
+  console.log(url);
   const res = await axios
-    .get(newUrl, { headers: { Authorization: `Bearer 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` } })
+    .get(url, { headers: { Authorization: `Bearer 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` } })
     .then((response) => response.data.items);
   return res;
 };
