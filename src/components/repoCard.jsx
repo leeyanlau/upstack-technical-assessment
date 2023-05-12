@@ -7,7 +7,7 @@ import { TbStar, TbGitFork, TbEye, TbCode, TbEyeFilled, TbStarFilled } from "rea
 import "../styles/RepoCard/RepoCard.css";
 
 const RepoCard = () => {
-  const { repos, searchTerm, hasMore } = useSelector((state) => state.reposReducer);
+  const { repos, hasMore } = useSelector((state) => state.reposReducer);
   const dispatch = useDispatch();
 
   //get initial repo data
@@ -28,11 +28,9 @@ const RepoCard = () => {
     }
   };
 
-  const reposData = repos.filter((repo) => repo.name.toLowerCase().includes(searchTerm)); //filter search data
-
   return (
     <div className="card_container">
-      {reposData.map((val, key) => {
+      {repos.map((val, key) => {
         return (
           <div className="card" key={key} onClick={() => window.open(val.html_url, "_blank", "noreferrer")}>
             <div className="card_overview">
