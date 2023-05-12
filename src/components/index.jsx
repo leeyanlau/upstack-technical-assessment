@@ -1,3 +1,3 @@
-export { default as SearchBar } from "./SearchBar";
-export { default as RepoCard } from "./RepoCard";
+export { default as SearchBar } from "./searchBar";
+export { default as RepoCard } from "./repoCard";
 export { default as Loading } from "./Loading";
