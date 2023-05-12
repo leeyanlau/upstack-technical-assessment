@@ -34,7 +34,7 @@ const RepoCard = () => {
     <div className="card_container">
       {reposData.map((val, key) => {
         return (
-          <div className="card" key={key}>
+          <div className="card" key={key} onClick={() => window.open(val.html_url, "_blank", "noreferrer")}>
             <div className="card_overview">
               <div className="card_title">{val.name}</div>
               <div className="card_desc">{val.description ? val.description : "No description available"}</div>
