@@ -2,17 +2,19 @@ import axios from "axios";
 import { call, put, takeLatest, select } from "redux-saga/effects";
 import { getReposFailure, getReposSuccess } from "../state/reposState";
 
-const getData = (page) => {
+const getData = async (page) => {
   const url = "https://api.github.com/orgs/reactjs/repos?page=" + page + "&per_page=10";
-  return axios.get(url, {
-    headers: { Authorization: `Bearer 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` },
-  });
+  const res = await axios
+    .get(url, { headers: { Authorization: `Bearer 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` } })
+    .then((response) => response);
+  console.log(res);
+  return res;
 };
 
 function* workGetReposFetch() {
   try {
     const page = yield select((state) => state.reposReducer.page);
-    const response = yield call(getData(page));
+    const response = yield call(getData, page);
     yield put(getReposSuccess(response.data));
   } catch (error) {
     yield put(getReposFailure(error));
