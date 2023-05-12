@@ -1,0 +1,11 @@
+@import "../variables/variables.scss";
+
+.loadingMsg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-size: 2rem;
+
+  color: $secondaryColor;
+}

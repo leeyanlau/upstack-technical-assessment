@@ -1,7 +1,9 @@
 import React from "react";
 
+import "../styles/Loading/Loading.css";
+
 const Loading = () => {
-  return <h1>Loading...</h1>;
+  return <div className="loadingMsg">Loading . . . </div>;
 };
 
 export default Loading;

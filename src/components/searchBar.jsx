@@ -1,6 +1,6 @@
 import React from "react";
 
-import { MdSearch } from "react-icons/md";
+import { BiSearch } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchTerm } from "../redux/state/reposState";
 
@@ -16,7 +16,7 @@ const SearchBar = () => {
 
   return (
     <div className="searchBar">
-      <MdSearch className="searchBar_icon" />
+      <BiSearch className="searchBar_icon" />
       <input className="searchBar_input" placeholder="Search for repositories..." value={searchTerm} onChange={handleSearchChange} />
     </div>
   );

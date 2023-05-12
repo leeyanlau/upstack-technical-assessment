@@ -7,7 +7,6 @@ const getData = async (page) => {
   const res = await axios
     .get(url, { headers: { Authorization: `Bearer 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` } })
     .then((response) => response);
-  console.log(res);
   return res;
 };
 
