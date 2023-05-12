@@ -26,6 +26,8 @@ export const reposSlice = createSlice({
     },
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
+      state.page = 1;
+      state.repos = [];
     },
   },
 });

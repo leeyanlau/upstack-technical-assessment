@@ -2,7 +2,7 @@ import React from "react";
 
 import { BiSearch } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchTerm } from "../redux/state/reposState";
+import { getReposFetch, setSearchTerm } from "../redux/state/reposState";
 
 import "../styles/SearchBar/SearchBar.css";
 
@@ -12,6 +12,7 @@ const SearchBar = () => {
 
   const handleSearchChange = (e) => {
     dispatch(setSearchTerm(e.target.value.toLowerCase()));
+    dispatch(getReposFetch());
   };
 
   return (

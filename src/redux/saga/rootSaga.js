@@ -4,7 +4,6 @@ import { getReposFailure, getReposSuccess } from "../state/reposState";
 
 const getData = async (page, searchTerm) => {
   const url = "https://api.github.com/search/repositories?q=org:reactjs+" + searchTerm + "&page=" + page + "&per_page=10";
-  // const url = "https://api.github.com/orgs/reactjs/repos?page=" + page + "&per_page=10&sort=updated_at";
   const res = await axios
     .get(url, { headers: { Authorization: `Bearer ${process.env.REACT_APP_SECRET2}` } })
     .then((response) => response.data.items);
