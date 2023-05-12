@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getReposFetch } from "../redux/state/reposState";
 
+import { TbStar, TbGitFork, TbEye, TbCode, TbEyeFilled, TbStarFilled } from "react-icons/tb";
+
 import "../styles/RepoCard/RepoCard.css";
 
 const RepoCard = () => {
@@ -38,10 +40,24 @@ const RepoCard = () => {
               <div className="card_desc">{val.description ? val.description : "No description available"}</div>
             </div>
             <div className="card_details">
-              <div className="card_details_stars">Stars: {val.stargazers_count}</div>
-              <div className="card_details_forks">Forks: {val.forks_count}</div>
-              <div className="card_details_watchers">Watchers: {val.watchers}</div>
-              <div className="card_details_language">Language: {val.language}</div>
+              <div className="card_details_stars">
+                <TbStar className="star_outline" />
+                <TbStarFilled className="star_filled" />
+                {val.stargazers_count}
+              </div>
+              <div className="card_details_forks">
+                <TbGitFork />
+                {val.forks_count}
+              </div>
+              <div className="card_details_watchers">
+                <TbEye className="eye_outline" />
+                <TbEyeFilled className="eye_filled" />
+                {val.watchers}
+              </div>
+              <div className="card_details_language">
+                <TbCode />
+                {val.language}
+              </div>
             </div>
           </div>
         );

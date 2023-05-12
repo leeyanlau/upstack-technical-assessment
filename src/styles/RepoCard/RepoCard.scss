@@ -7,7 +7,7 @@
 
   .card {
     width: 80vw;
-    height: 6rem;
+    height: auto;
     margin: 0.5rem;
     padding: 1rem;
     box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.2);
@@ -36,9 +36,16 @@
 
     .card_details {
       display: none;
+
+      .star_filled,
+      .eye_filled {
+        display: none;
+        color: white;
+      }
     }
   }
 }
+
 .card_container :hover {
   background-color: $primaryColor;
   border-color: $primaryColor;
@@ -53,6 +60,31 @@
 
   .card_details {
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: 4rem;
+    padding-top: 0.5rem;
+    color: white;
+
+    .card_details_stars,
+    .card_details_forks,
+    .card_details_language,
+    .card_details_watchers {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card_details_stars,
+    .card_details_watchers {
+      display: flex;
+      .star_outline,
+      .eye_outline {
+        display: none;
+      }
+      .star_filled,
+      .eye_filled {
+        display: block;
+      }
+    }
   }
 }
